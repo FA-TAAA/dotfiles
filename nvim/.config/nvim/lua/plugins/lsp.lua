@@ -14,12 +14,12 @@ return {
 			})
 		end,
 	},
+
 	-- LSPConfig: Configure LSP servers
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			"williamboman/mason.nvim",
-			-- "williamboman/mason-lspconfig.nvim",
 			"saghen/blink.cmp",
 		},
 		config = function()
@@ -45,14 +45,6 @@ return {
 					},
 				},
 			}
-
-			vim.lsp.config("prettierd", {
-				cmd = { "prettierd" },
-			})
-
-			vim.lsp.config("htmlhint", {
-				cmd = { "htmlhint" },
-			})
 
 			local servers = {
 				"lua_ls",

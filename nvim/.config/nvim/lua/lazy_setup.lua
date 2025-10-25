@@ -18,8 +18,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ import = "plugins" }, {
-	--install = { colorscheme = { "hybrid" } },
-	checker = { enabled = false, notify = true },
+	checker = { enabled = false, notify = false },
 })
 
 vim.cmd("colorscheme kanagawa-paper")

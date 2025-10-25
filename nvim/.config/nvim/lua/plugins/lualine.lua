@@ -7,7 +7,6 @@ return {
 		require("lualine").setup({
 			options = {
 				theme = kanagawa_paper,
-				-- ... your lualine config
 			},
 		})
 	end,
