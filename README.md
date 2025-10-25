@@ -1,6 +1,6 @@
 <img width="2048" height="1152" alt="Screenshot 2025-10-25 at 12 41 53" src="https://github.com/user-attachments/assets/349efe50-1325-4486-a13c-30b88a5ecc96" />
 <img width="2048" height="1152" alt="Screenshot 2025-10-25 at 12 57 01" src="https://github.com/user-attachments/assets/c04feb59-135e-44c6-b614-78faa14440b9" />
-<img width="2048" height="1152" alt="Screenshot 2025-10-25 at 13 15 17" src="https://github.com/user-attachments/assets/3a9a76e3-d374-47f3-99d2-ed3ed770f733" />
+<img width="2048" height="1152" alt="Screenshot 2025-10-25 at 13 31 03" src="https://github.com/user-attachments/assets/dd46a2e0-211b-4db7-b4b9-7867cb52bbbd" />
 
 ---
 
@@ -15,4 +15,4 @@
 
 ---
 
-A huge shotout to @siduck for helping me configure Neovim !
+A huge shotout to @siduck (Creator of NvChad) for helping me configure Neovim !
