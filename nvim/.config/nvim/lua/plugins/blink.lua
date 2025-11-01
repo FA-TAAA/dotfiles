@@ -9,7 +9,7 @@ return {
 	opts = {
 		keymap = {
 			preset = "default",
-			["<Cr>"] = { "select_and_accept", "fallback" },
+			["<CR>"] = { "select_and_accept", "fallback" },
 			["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
 		},
 
