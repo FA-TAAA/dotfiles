@@ -1,26 +1,16 @@
 return {
-	{
-		"stevearc/conform.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			require("conform").setup({
-				formatters_by_ft = {
-					lua = { "stylua" },
-					javascript = { "prettierd" },
-					typescript = { "prettierd" },
-					html = { "prettierd" },
-					css = { "prettierd" },
-					markdown = { "prettierd" },
-				},
-
-				-- Format on save
-				vim.api.nvim_create_autocmd("BufWritePre", {
-					pattern = "*",
-					callback = function(args)
-						require("conform").format({ bufnr = args.buf })
-					end,
-				}),
-			})
-		end,
+	"stevearc/conform.nvim",
+	event = { "BufWritePre" },
+	opts = {
+		formatters_by_ft = {
+			lua = { "stylua" },
+			-- javascript = { "prettierd", "prettier", stop_after_first = true },
+		},
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			pattern = "*",
+			callback = function(args)
+				require("conform").format({ bufnr = args.buf })
+			end,
+		}),
 	},
 }

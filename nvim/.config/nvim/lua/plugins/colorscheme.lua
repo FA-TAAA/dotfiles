@@ -1,6 +1,4 @@
 return {
-	"thesimonho/kanagawa-paper.nvim",
-	opts = {
-		transparent = true,
-	},
+	"RRethy/base16-nvim",
+	lazy = false,
 }
