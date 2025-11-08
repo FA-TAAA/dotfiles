@@ -12,20 +12,43 @@ return {
 			},
 		},
 	},
+
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			vim.lsp.config["lua_ls"] =
-				{
-					cmd = { "lua-language-server" },
-					settings = {
-						Lua = {
-							diagnostics = {
-								globals = { "vim" },
-							},
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+			capabilities.textDocument.completion.completionItem = {
+				documentationFormat = { "markdown", "plaintext" },
+				snippetSupport = true,
+				preselectSupport = true,
+				insertReplaceSupport = true,
+				labelDetailsSupport = true,
+				deprecatedSupport = true,
+				commitCharactersSupport = true,
+				tagSupport = { valueSet = { 1 } },
+				resolveSupport = {
+					properties = {
+						"documentation",
+						"detail",
+						"additionalTextEdits",
+					},
+				},
+			}
+
+			vim.lsp.config("*", { capabilities = capabilities })
+
+			vim.lsp.config["lua_ls"] = {
+				settings = {
+					Lua = {
+						diagnostics = {
+							globals = { "vim" },
 						},
 					},
-				}, vim.lsp.enable("lua_ls")
+				},
+			}
+			local servers = { "lua_ls", "vtsls" }
+			vim.lsp.enable(servers)
 		end,
 	},
 }

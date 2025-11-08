@@ -1,5 +1,5 @@
-local map = vim.keymap.set
 vim.g.mapleader = " "
+local map = vim.keymap.set
 
 -- Split management
 map("n", "<leader>sv", "<cmd>vsp<CR>", { desc = "Split Vertically" })
@@ -15,7 +15,14 @@ map("n", "<C-j>", "<cmd>TmuxNavigateDown<CR>", { desc = "Move To The Bottom" })
 map("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>", { desc = "Move To The Top" })
 map("n", "<C-k>", "<cmd>TmuxNavigateRight<CR>", { desc = "Move To The Right" })
 
+-- Fuzzy Finding
+map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Find Files" })
+map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Find Buffers" })
+
 -- LSP
+
+-- Tree
+map("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Open File Tree" })
 
 -- Blink
 

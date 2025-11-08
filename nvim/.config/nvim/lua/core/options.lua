@@ -1,4 +1,5 @@
-vim.cmd("let g:netrw_liststyle = 3")
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 local opt = vim.opt
 
@@ -37,6 +38,36 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+
+--add a scrolloff
+opt.scrolloff = 999
+
+-- Inline diagnostic
+vim.diagnostic.config({
+	virtual_text = true, -- Enable inline messages
+	signs = true, -- Show signs in the gutter
+	underline = true, -- Underline problematic text
+	update_in_insert = false, -- Don't update diagnostics while typing
+	severity_sort = true, -- Sort diagnostics by severity
+})
+
+-- Yank Highlight
+vim.api.nvim_create_autocmd("TextYankPost", {
+	group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
+	pattern = "*",
+	desc = "highlight selection on yank",
+	callback = function()
+		vim.highlight.on_yank({ timeout = 200, visual = true })
+	end,
+})
+
+-- No Auto Comment On New Line
+vim.api.nvim_create_autocmd("FileType", {
+	group = vim.api.nvim_create_augroup("no_auto_comment", {}),
+	callback = function()
+		vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+	end,
+})
 
 local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
 vim.env.PATH = vim.env.PATH .. (is_windows and ";" or ":") .. vim.fn.stdpath("data") .. "/mason/bin"
