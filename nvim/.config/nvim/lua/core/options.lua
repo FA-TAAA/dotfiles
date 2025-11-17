@@ -19,12 +19,14 @@ opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
 
 opt.cursorline = true
+opt.cursorlineopt = "number"
 
 -- turn on termguicolors for tokyonight colorscheme to work
 -- (have to use iterm2 or any other true color terminal)
 opt.termguicolors = true
 opt.background = "dark" -- colorschemes that can be light or dark will be made dark
 opt.signcolumn = "yes" -- show sign column so that text doesn't shift
+vim.o.winborder = "bold"
 
 -- backspace
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
@@ -40,7 +42,7 @@ opt.splitbelow = true -- split horizontal window to the bottom
 opt.swapfile = false
 
 --add a scrolloff
-opt.scrolloff = 999
+opt.scrolloff = 10
 
 -- Inline diagnostic
 vim.diagnostic.config({
@@ -49,24 +51,6 @@ vim.diagnostic.config({
 	underline = true, -- Underline problematic text
 	update_in_insert = false, -- Don't update diagnostics while typing
 	severity_sort = true, -- Sort diagnostics by severity
-})
-
--- Yank Highlight
-vim.api.nvim_create_autocmd("TextYankPost", {
-	group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
-	pattern = "*",
-	desc = "highlight selection on yank",
-	callback = function()
-		vim.highlight.on_yank({ timeout = 200, visual = true })
-	end,
-})
-
--- No Auto Comment On New Line
-vim.api.nvim_create_autocmd("FileType", {
-	group = vim.api.nvim_create_augroup("no_auto_comment", {}),
-	callback = function()
-		vim.opt_local.formatoptions:remove({ "c", "r", "o" })
-	end,
 })
 
 local is_windows = vim.loop.os_uname().sysname == "Windows_NT"

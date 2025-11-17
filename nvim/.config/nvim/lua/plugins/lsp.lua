@@ -36,8 +36,9 @@ return {
 				},
 			}
 
-			vim.lsp.config("*", { capabilities = capabilities })
+			capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
+			vim.lsp.config("*", { capabilities = capabilities })
 			vim.lsp.config["lua_ls"] = {
 				settings = {
 					Lua = {
@@ -47,7 +48,13 @@ return {
 					},
 				},
 			}
-			local servers = { "lua_ls", "vtsls" }
+			local servers = {
+				"lua_ls",
+				"vtsls",
+				"html",
+				"cssls",
+				-- "emmet_language_server",
+			}
 			vim.lsp.enable(servers)
 		end,
 	},

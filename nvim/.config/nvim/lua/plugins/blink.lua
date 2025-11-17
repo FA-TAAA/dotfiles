@@ -7,7 +7,11 @@ return {
 	version = "1.*",
 
 	opts = {
-		keymap = { preset = "default", ["<CR>"] = { "select_and_accept", "fallback" } },
+		keymap = {
+			preset = "default",
+			["<CR>"] = { "select_and_accept", "fallback" },
+			["<Tab>"] = { "select_next", "fallback" },
+		},
 
 		appearance = {
 			nerd_font_variant = "mono",
@@ -19,7 +23,9 @@ return {
 			default = { "lsp", "path", "snippets", "buffer" },
 		},
 
-		fuzzy = { implementation = "prefer_rust_with_warning" },
+		fuzzy = {
+			implementation = "prefer_rust_with_warning",
+		},
 	},
 	opts_extend = { "sources.default" },
 }
