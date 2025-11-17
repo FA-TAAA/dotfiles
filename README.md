@@ -10,6 +10,7 @@
 - Terminal Multiplexer : [Tmux](https://github.com/tmux/tmux)
 - System Information Tool : [Fastfetch](https://github.com/fastfetch-cli/fastfetch)
 - Shell Theme : [Starship](https://starship.rs/)
+- Terminal Multiplexer : [Tmux](https://github.com/tmux/tmux)
 
 ---
 
