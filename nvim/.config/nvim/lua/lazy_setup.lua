@@ -26,4 +26,4 @@ require("lazy").setup({
 	},
 })
 
-vim.cmd("colorscheme base16-classic-dark")
+vim.cmd("colorscheme base16-everforest-dark-hard")

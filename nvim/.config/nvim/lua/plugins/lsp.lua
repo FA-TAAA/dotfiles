@@ -3,6 +3,10 @@ return {
 		"williamboman/mason.nvim",
 		cmd = { "Mason", "MasonInstall", "MasonUpdate", "MasonLog" },
 		opts = {
+			registries = {
+				"github:mason-org/mason-registry",
+				"github:Crashdummyy/mason-registry",
+			},
 			ui = {
 				icons = {
 					package_installed = "✓",
@@ -48,12 +52,23 @@ return {
 					},
 				},
 			}
+
+			vim.lsp.config["superhtml"] = {
+				cmd = { "superhtml --syntax-only", "lsp" },
+				filetypes = { "html", "shtml", "htm" },
+				root_dir = vim.fs.dirname(vim.fs.find({ ".git" }, { upward = true })[1]),
+			}
+
 			local servers = {
 				"lua_ls",
 				"vtsls",
-				"html",
 				"cssls",
-				-- "emmet_language_server",
+				"markdown_oxide",
+				"clangd",
+				"superhtml",
+				"emmet_language_server",
+				"roslyn_ls",
+				-- "html",
 			}
 			vim.lsp.enable(servers)
 		end,

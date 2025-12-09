@@ -1,12 +1,4 @@
 -- Normal Commands
-vim.api.nvim_create_user_command("TSInstallAll", function()
-	local spec = require("lazy.core.config").plugins["nvim-treesitter"]
-	local install = require("nvim-treesitter.install")
-	for _, lang in ipairs(spec.opts.ensure_installed) do
-		install.update({ with_sync = false })(lang)
-	end
-end, { desc = "Installs all languages in ensure_installed" })
-
 -- Auto Commands
 
 -- Yank Highlight
@@ -25,14 +17,4 @@ vim.api.nvim_create_autocmd("FileType", {
 	callback = function()
 		vim.opt_local.formatoptions:remove({ "c", "r", "o" })
 	end,
-})
-
--- Remove Highlights When Entering Insert Mode
-vim.api.nvim_create_autocmd("InsertCharPre", {
-	group = vim.api.nvim_create_augroup("ClearHlOnInsert", { clear = true }),
-	pattern = "*",
-	callback = function()
-		vim.cmd("nohlsearch")
-	end,
-	desc = "Remove highlights when entering insert mode",
 })
