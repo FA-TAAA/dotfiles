@@ -1,3 +1,5 @@
+eval "$(starship init zsh)"
+
 # Set Homebrew prefix for plugin paths
 export HOMEBREW_PREFIX=$(brew --prefix)
 
@@ -5,31 +7,9 @@ export HOMEBREW_PREFIX=$(brew --prefix)
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 # Source zsh-vi-mode FIRST (before everything)
-source $HOMEBREW_PREFIX/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Load other plugins AFTER zsh-vi-mode initializes
-function zvm_after_init() {
-    # Load autosuggestions first
-    source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-    
-    # Load syntax highlighting last
-    source $HOMEBREW_PREFIX/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-    
-    # Re-initialize starship after zsh-vi-mode to fix keymap conflicts
-    eval "$(starship init zsh)"
-}
-
-# Activate Completion
-if type brew &>/dev/null; then
-       FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-       autoload -Uz compinit
-       # Only regenerate once per day
-       if [[ -n ${ZDOTDIR}/.zcompdump(#qNmh+24) ]]; then
-           compinit
-       else
-           compinit -C
-       fi
-   fi
 # Yazi Shell Wrapper
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
