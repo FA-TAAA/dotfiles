@@ -1,6 +1,6 @@
-theme = Later This Evening
+theme = Soft Server 
 macos-titlebar-style = transparent
 background-opacity = 0.8
-font-size = 26 
+font-size = 24 
 background-blur = true
 font-family = "MesloLGSDZNFM-Regular"

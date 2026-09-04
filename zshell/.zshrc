@@ -13,3 +13,9 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias ff="fastfetch"
 alias c="clear"
 alias ls="eza --icons=always"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/nizar/.lmstudio/bin"
+# End of LM Studio CLI section
+
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
