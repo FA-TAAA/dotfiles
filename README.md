@@ -12,3 +12,9 @@
 - System Information Tool : [Fastfetch](https://github.com/fastfetch-cli/fastfetch)
 - Shell Theme : [Starship](https://starship.rs/)
 - Keyboard : [Silakka54](https://github.com/Squalius-cephalus/silakka54)
+- Monitors Management : [BetterDisplay](https://betterdisplay.pro/)
+- System Monitoring : [Stats](https://mac-stats.com/)
+
+---
+
+Keep Using As Much Open Source As Possible ⭐
