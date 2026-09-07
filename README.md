@@ -3,17 +3,22 @@
 
 ---
 
-### Tools :
+### Tools With Dotfiles :
 - Tiling Window Manager : [Aerospace](https://nikitabobko.github.io/AeroSpace/guide)
 - Terminal : [Ghostty](https://ghostty.org/)
-- Package Manager : [Homebrew](https://brew.sh/)
-- Text Editor : [VSCode](https://code.visualstudio.com/) (With Vim Extension & AI Features Disabled)
 - Terminal Multiplexer : [Tmux](https://github.com/tmux/tmux)
+- (Ex) Text-Editor : [Neovim](https://neovim.io/)
 - System Information Tool : [Fastfetch](https://github.com/fastfetch-cli/fastfetch)
 - Shell Theme : [Starship](https://starship.rs/)
-- Keyboard : [Silakka54](https://github.com/Squalius-cephalus/silakka54)
+
+
+
+### Tools Without Dotfiles :
 - Monitors Management : [BetterDisplay](https://betterdisplay.pro/)
 - System Monitoring : [Stats](https://mac-stats.com/)
+- Text Editor : [VSCode](https://code.visualstudio.com/) (With Vim Extension & AI Features Disabled)
+- Package Manager : [Homebrew](https://brew.sh/)
+- Keyboard : [Silakka54](https://github.com/Squalius-cephalus/silakka54)
 
 ---
 
